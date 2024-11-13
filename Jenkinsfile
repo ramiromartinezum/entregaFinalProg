@@ -1,11 +1,15 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven3' // Usa el nombre de Maven configurado en Jenkins
+    }
+
     stages {
         stage('Compilar') {
             steps {
                 script {
-                    // Compilar el proyecto usando Maven en Windows
+                    // Compilar el proyecto usando Maven en Jenkins
                     bat 'mvn clean compile'
                 }
             }
@@ -14,7 +18,7 @@ pipeline {
         stage('Pruebas Unitarias') {
             steps {
                 script {
-                    // Ejecutar pruebas unitarias con Maven en Windows
+                    // Ejecutar pruebas unitarias con Maven en Jenkins
                     bat 'mvn test'
                 }
             }
@@ -28,7 +32,7 @@ pipeline {
         stage('Generar Documentación') {
             steps {
                 script {
-                    // Generar documentación con Javadoc en Windows
+                    // Generar documentación con Javadoc en Jenkins
                     bat 'mvn javadoc:javadoc'
                 }
             }
@@ -42,7 +46,7 @@ pipeline {
         stage('Cobertura de Código') {
             steps {
                 script {
-                    // Generar reporte de cobertura en Windows
+                    // Generar reporte de cobertura en Jenkins
                     bat 'mvn jacoco:report'
                 }
             }
@@ -54,4 +58,3 @@ pipeline {
         }
     }
 }
-
