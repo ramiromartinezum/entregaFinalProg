@@ -1,4 +1,4 @@
-package main.pedidos;
+package main.java.pedidos;
 
 public class EnvioPedido implements Runnable {
     private Pedido pedido;
@@ -13,7 +13,7 @@ public class EnvioPedido implements Runnable {
             try {
                 Thread.sleep(2000);  // Simulación del proceso de envío
                 pedido.setEstado(Pedido.EstadoPedido.ENVIADO);
-                System.out.println("main.pedidos.Pedido " + pedido.getIdPedido() + " enviado");
+                System.out.println("main.java.pedidos.Pedido " + pedido.getIdPedido() + " enviado");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

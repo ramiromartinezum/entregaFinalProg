@@ -1,6 +1,6 @@
-package test;
+package test.java.pedidos;
 
-import main.pedidos.Pedido;
+import main.java.pedidos.Pedido;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

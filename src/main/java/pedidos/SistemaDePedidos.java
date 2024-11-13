@@ -1,4 +1,4 @@
-package main.pedidos;
+package main.java.pedidos;
 
 import java.util.List;
 import java.util.concurrent.*;
@@ -63,7 +63,7 @@ public class SistemaDePedidos {
                         System.out.println("Empaquetando pedido " + pedido.getIdPedido());
                         Thread.sleep(3000);  // Simula el tiempo de empaquetado
                         pedido.setEstado(Pedido.EstadoPedido.EMPAQUETADO);
-                        System.out.println("main.pedidos.Pedido " + pedido.getIdPedido() + " empaquetado");
+                        System.out.println("main.java.pedidos.Pedido " + pedido.getIdPedido() + " empaquetado");
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -80,7 +80,7 @@ public class SistemaDePedidos {
                         System.out.println("Enviando pedido " + pedido.getIdPedido());
                         Thread.sleep(2000);  // Simula el tiempo de envío
                         pedido.setEstado(Pedido.EstadoPedido.ENVIADO);
-                        System.out.println("main.pedidos.Pedido " + pedido.getIdPedido() + " enviado");
+                        System.out.println("main.java.pedidos.Pedido " + pedido.getIdPedido() + " enviado");
                     }
                 } catch (InterruptedException e) {
                     e.printStackTrace();

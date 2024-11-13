@@ -1,6 +1,6 @@
-package main.pedidos;
+package main.java.pedidos;
 
-import main.pedidos.Pedido;
+import main.java.pedidos.Pedido;
 
 public class ProcesamientoPago implements Runnable {
     private Pedido pedido;

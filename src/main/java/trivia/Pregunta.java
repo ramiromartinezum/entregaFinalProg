@@ -1,4 +1,4 @@
-package main.trivia;
+package main.java.trivia;
 
 public class Pregunta {
     private String enunciado;

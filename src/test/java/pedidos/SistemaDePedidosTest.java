@@ -1,7 +1,7 @@
-package test;
+package test.java.pedidos;
 
-import main.pedidos.Pedido;
-import main.pedidos.SistemaDePedidos;
+import main.java.pedidos.Pedido;
+import main.java.pedidos.SistemaDePedidos;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -43,7 +43,7 @@ public class SistemaDePedidosTest {
     public void testCerrarSistema() throws InterruptedException {
         // Creamos algunos pedidos de prueba
         Pedido pedido1 = new Pedido(1, "Cliente A", List.of("Producto 1"), false);
-        Pedido pedido2 = new Pedido(2, "Cliente B", List.of("Producto 2"), true);  // main.pedidos.Pedido urgente
+        Pedido pedido2 = new Pedido(2, "Cliente B", List.of("Producto 2"), true);  // main.java.pedidos.Pedido urgente
 
         // Agregamos los pedidos al sistema
         sistema.agregarPedido(pedido1);
@@ -69,7 +69,7 @@ public class SistemaDePedidosTest {
     public void testManejoDePedidosUrgentes() throws InterruptedException {
         // Creamos un pedido urgente y un pedido normal
         Pedido pedidoNormal = new Pedido(1, "Cliente A", List.of("Producto 1"), false);
-        Pedido pedidoUrgente = new Pedido(2, "Cliente B", List.of("Producto 2"), true);  // main.pedidos.Pedido urgente
+        Pedido pedidoUrgente = new Pedido(2, "Cliente B", List.of("Producto 2"), true);  // main.java.pedidos.Pedido urgente
 
         // Agregamos los pedidos al sistema
         sistema.agregarPedido(pedidoNormal);

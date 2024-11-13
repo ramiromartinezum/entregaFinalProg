@@ -1,4 +1,4 @@
-package main.pedidos;
+package main.java.pedidos;
 
 import java.util.List;
 
@@ -54,7 +54,7 @@ public class Pedido implements Comparable<Pedido> {
 
     @Override
     public String toString() {
-        return "main.pedidos.Pedido{" +
+        return "main.java.pedidos.Pedido{" +
                 "idPedido=" + idPedido +
                 ", cliente='" + cliente + '\'' +
                 ", productos=" + productos +

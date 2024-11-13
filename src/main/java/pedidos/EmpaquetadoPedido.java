@@ -1,4 +1,4 @@
-package main.pedidos;
+package main.java.pedidos;
 
 import java.util.List;
 
@@ -27,7 +27,7 @@ public class EmpaquetadoPedido implements Runnable {
                 });
 
                 pedido.setEstado(Pedido.EstadoPedido.EMPAQUETADO);
-                System.out.println("main.pedidos.Pedido " + pedido.getIdPedido() + " empaquetado");
+                System.out.println("main.java.pedidos.Pedido " + pedido.getIdPedido() + " empaquetado");
             } else {
                 System.out.println("No se puede empaquetar el pedido " + pedido.getIdPedido() + ". El pago no se ha realizado.");
             }

@@ -1,4 +1,4 @@
-package main.trivia;
+package main.java.trivia;
 import java.util.List;
 import java.util.Scanner;
 public class TriviaJuego {
