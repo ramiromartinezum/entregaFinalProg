@@ -5,8 +5,8 @@ pipeline {
         stage('Compilar') {
             steps {
                 script {
-                    // Compilar el proyecto usando Gradle o Maven
-                    sh 'mvn clean compile' // usa 'gradle build' si usas Gradle en lugar de Maven
+                    // Compilar el proyecto usando Maven
+                    sh 'mvn clean compile'
                 }
             }
         }
@@ -14,13 +14,14 @@ pipeline {
         stage('Pruebas Unitarias') {
             steps {
                 script {
-                    // Ejecutar pruebas unitarias
+                    // Ejecutar pruebas unitarias con Maven
                     sh 'mvn test'
                 }
             }
             post {
                 always {
-                    junit '**/target/surefire-reports/*.xml' // Publicar resultados de pruebas
+                    // Publicar los resultados de las pruebas unitarias
+                    junit '**/target/surefire-reports/*.xml'
                 }
             }
         }
@@ -34,6 +35,7 @@ pipeline {
             }
             post {
                 always {
+                    // Guardar la documentación generada como artefacto
                     archiveArtifacts artifacts: 'target/site/apidocs/**', allowEmptyArchive: true
                 }
             }
@@ -42,13 +44,13 @@ pipeline {
         stage('Cobertura de Código') {
             steps {
                 script {
-                    // Generar reporte de cobertura (usa JaCoCo o Cobertura)
+                    // Generar reporte de cobertura con JaCoCo
                     sh 'mvn jacoco:report'
                 }
             }
             post {
                 always {
-                    // Publicar resultados de cobertura de código
+                    // Publicar el reporte de cobertura de código
                     jacoco execPattern: 'target/jacoco.exec', classPattern: 'target/classes', sourcePattern: 'src/main/java', exclusionPattern: ''
                 }
             }
@@ -57,12 +59,12 @@ pipeline {
 
     post {
         success {
-            mail to: 'tu_email@example.com',
+            mail to: 'fdelcampo01@gmail.com',
                  subject: "Pipeline Exitoso: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                  body: "El pipeline se completó con éxito.\nRevisa los resultados en Jenkins: ${env.BUILD_URL}"
         }
         failure {
-            mail to: 'tu_email@example.com',
+            mail to: 'fdelcampo01@gmail.com',
                  subject: "Pipeline Fallido: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                  body: "El pipeline falló. Revisa los detalles en Jenkins: ${env.BUILD_URL}"
         }
